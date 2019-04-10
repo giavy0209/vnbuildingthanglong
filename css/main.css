@@ -65,17 +65,27 @@ body {
 .hm-col-7{
     width:58.333333%;
 }
-.hm-col-3{
-    width:25%;
-}
 .hm-col-6{
     width:50%;
 }
+.hm-col-5{
+    width:41.6666%;
+}
+.hm-col-4{
+    width:33.33333%;
+}
+.hm-col-3{
+    width:25%;
+}
+
 .hm-column-2 .item{
     width: 16.666666%;
 }
 .hm-column-3 .item{
     width: 33.3333333%;
+}
+.hm-column-3 .item:not(:nth-child(-n + 3)) {
+    margin-top: 30px;
 }
 .hm-column-4 .item{
     width: 25%;
@@ -113,6 +123,13 @@ body {
 .pr-0{
     padding-right: 0 !important;
 }
+
+.product:hover{
+    border-color: #87a8f4;
+    box-shadow: 0px 0px 5px 1px #87a8f4;
+    transition: all .3s ease;
+}
+
 /* ===================01. Header============= */
 .width-device-width{
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
@@ -177,9 +194,6 @@ body {
 .supporter-contact .icon-skype{
     margin-right: 10px
 }
-
-
-
 
 
 /* ===================02. Menu============= */
@@ -248,7 +262,9 @@ body {
 .menu-x li:last-child{
     border-right: none;
     border-left: none;
-    padding-left: 25px;
+}
+.menu-x li:last-child a{
+    padding-left: 20px
 }
 .menu-x li a{
     text-transform: uppercase;
@@ -265,12 +281,14 @@ body {
 .menu-y{
     border-bottom: 1px solid #eee;
     border-left: 1px solid #d9d9d9;
+    border-right: 1px solid transparent;
 }
+
 .menu-y li a{
-    padding: 14px 0 15px 16px;
     color: #333;
     width: 100%;
     background-color: #fff;
+    padding: 15px 15px;
 }
 .menu-y li+li a{
     border-top: 1px dashed #b4b4b4;
@@ -286,6 +304,7 @@ body {
 }
 .menu-y ul li{
     position: relative;
+
 }
 .menu-y ul li ul{
     position: absolute;
@@ -315,8 +334,15 @@ body {
 .introduce {
     margin-top: 30px;
 }
-.introduce .item{
+.introduce .item .icon{
+    width: 20px;
+}
+.introduce .item .about-us{
+    width: calc(100% - 25px);
+}
+.introduce .item .for-bg-color{
     background-color: #f4f5f6;
+    padding: 20px 15px;
 }
 .introduce h1{
     font-size: 18px;
@@ -360,19 +386,25 @@ body {
 .list-services{
     margin-top: 32px;
 }
-.product,
-.services{
+.product{
     border: 1px solid #eaeaea;
     padding: 5px;
 }
-.product h3 a{
+.product-detail{
+    margin: 20px 20px 0 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 20px;
+}
+.product-detail h3 a{
     font-size: 15px;
     font-weight: 500;
     color: #333;
-    margin: 20px 20px 0 10px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ebebeb;
     transition: all .3s 
+}
+.product-detail p{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
 }
 .product h3 a:hover,
 .services h3 a:hover,
@@ -424,6 +456,7 @@ body {
 .project.mini{
     font-size: 0px;
     border-bottom: 1px dashed #c2c2c2;
+    padding-bottom: 15px;
 }
 .project.mini+.project.mini{
     padding-top: 30px;
@@ -432,7 +465,8 @@ body {
     width: 27%
 }
 .list-project .caption{
-    width: 73%
+    width: calc(73% - 10px);
+    margin-left: 10px
 }
 .list-project .caption h3 a{
     margin:0;
@@ -552,4 +586,266 @@ footer .row:first-child{
 }
 .last-footer .chat-with-us i{
     margin-right: 10px;
+}
+/* ============05.Sidebar Product List============ */
+#sidebar{
+    margin-top: 50px;
+}
+#sidebar .most-view > h3{
+    font-size: 18px;
+    color: #014eff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 14px 0 7px 0 ;
+    margin: 0 14px;
+    border-bottom: 2px solid #e3e3e3;
+}
+#sidebar .most-view{
+    border: 1px solid #eee;
+}
+.most-view .most-view-product{
+    padding: 31px 0 14px 0;
+    margin: 0 18px 0 14px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.most-view .most-view-product:last-child{
+    border: none;
+}
+.most-view-product .img{
+    width: 100px;
+}
+.most-view-product .sidebar-product-title{
+    width: calc(100% - 105px);
+}
+.sidebar-product-title a{
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+}
+.sidebar-product-title .social{
+    color: #999;
+    font-size: 11px;
+}
+.most-view-product .sidebar-product-title .icon{
+    margin: 0 5px;
+}
+.sidebar-product-title a:hover{
+    color: #014eff;
+}
+.ads-2{
+    margin-top: 15px;
+}
+.img-ads{
+    position: relative;
+    display:block;
+}
+.img-ads::before{
+    content: " ";
+    display:block;
+    padding-top: 155.5555%;
+}
+.img-ads img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ===========06.Product Detail======== */
+.breadcrumb span{
+    margin: 0 5px;
+}
+#first-detail{
+    margin-top: 35px;
+    font-size: 0;
+}
+.detail-img{
+    width: 55.555%;
+    
+}
+.detail-img .img{
+    padding: 5px;
+    border: 1px solid #ededed;
+}
+.title-detail{
+    width: calc(100% - 55.555%);
+}
+.title-detail h1,
+.post-detail h1{
+    font-size: 30px;
+    font-weight: 500;
+}
+.upload-by p{
+    font-size: 13px;
+    font-style: italic;
+    color: #999;
+    border-left: 2px solid #d2d2d2;
+    padding-left: 6px;
+}
+.upload-by p span{
+    margin: 0 5px;
+}
+.upload-by p,
+.upload-by .share-social{
+    float: left;
+}
+.share-social{
+    margin-left: 10px;
+}
+.share-social img{
+    width: 16px;
+}
+.detail > p{
+    margin-top: 20px;
+}
+.detail ul{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.detail li::before,
+.much-more-detail li::before{
+    content: " ";
+    width: 4px;
+    height: 2px;
+    background-color: #555;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+.more-detail{
+    margin-top: 28px;
+    margin-bottom: 40px;
+}
+.title-more-detail{
+    font-size: 18px;
+    font-weight: 700;
+    color: #014eff;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e3e3e3;
+}
+.title-much-more-detail{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.much-more-detail ul ul{
+    margin-left: 30px;
+}
+.same-product{
+    margin-top: 60px;
+}
+/* =======07.Posts List========= */
+.out-services .product{
+    padding: 0;
+    border: none;
+}
+.out-services .product-detail{
+    border: none;
+}
+/* ========08.Post Detail======= */
+.post-detail{
+    width: 100%;
+}
+.same-services{
+    margin-top: 60px;
+}
+.same-services .product{
+    padding: 0;
+    border: none;
+}
+.same-services .product-detail{
+    border: none;
+}
+/* ======09.Contact======= */
+.but-it-is-contact span{
+    font-weight: 500;
+}
+.but-it-is-contact span.red{
+    color: #f9100b;
+}
+.but-it-is-contact ul{
+    margin: 0;
+}
+.but-it-is-contact li::before{
+    content: " ";
+    width: 0;
+    height: 0;
+    background-color: none;
+    margin: 0;
+}
+.but-it-is-contact .detail > ul{
+    margin: 15px 0;
+}
+.but-it-is-contact li{
+    margin: 10px 0;
+}
+.but-it-is-contact i{
+    width: 20px;
+    margin-right: 5px;
+}
+.but-it-is-contact .form{
+    margin: 5px 0;
+}
+.but-it-is-contact form p,
+.but-it-is-contact form input,
+.but-it-is-contact form textarea{
+    display: inline-block;
+    vertical-align: middle
+}
+.but-it-is-contact form p{
+    width: 150px;
+}
+.but-it-is-contact form input,
+.but-it-is-contact form textarea{
+    width: calc(100% - 155px);
+    border-radius: 5px;
+    height: 35px;
+    background-color: #f8f8f8;
+    border: 1px solid #d7d7d7;
+    padding: 0 15px;
+}
+.but-it-is-contact form .not-a-input{
+    width: calc(100% - 155px);
+}
+.but-it-is-contact form .form textarea{
+    height: 100px;;
+    resize: none;
+    padding-top: 15px;
+}
+.but-it-is-contact form input:focus,
+.but-it-is-contact form textarea:focus{
+    border:1px solid #ff6600;
+}
+.but-it-is-contact .btn button:first-child{
+    margin-left: 155px;
+    margin-right: 5px;
+    color: #fff;
+    background-color: #014eff;
+    border: none;
+    border-bottom: 2px solid #013ecc;
+    transition: all .5s;
+}
+.but-it-is-contact .btn button:first-child:hover{
+    background-color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+}
+.but-it-is-contact .btn button:last-child{
+    background-color: #fff;
+    border:1px solid #d9d9d9;
+}
+.but-it-is-contact .btn button{
+    width: 90px;
+    height: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+}
+.map{
+    margin-top: 50px;
+}
+/* ==========CheckBox For Sidebar=============== */
+#checkbox-sidebar, label{
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
 }
